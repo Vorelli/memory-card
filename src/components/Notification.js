@@ -3,7 +3,7 @@ import useShowThenHide from '../helpers/useShowThenHide';
 
 const Notification = (props) => {
   const divRef = useRef();
-  useShowThenHide({ ref: divRef, time: 2500, message: props.message });
+  useShowThenHide({ ref: divRef, time: props.time, message: props.message });
 
   return <div ref={divRef} className="notification">{props.message}</div>
 }
