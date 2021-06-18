@@ -1,0 +1,27 @@
+Components and their responsibilities:
+App
+  Holds all other components and just a good structure.
+  Responsibilities:
+    Renders all other components and connects their data to one another.
+
+Scoreboard:
+  Displays current score and high score.
+  Will display a win effect when the highest score is reached.
+  Responsibilities:
+    Displays the scores input from App.
+
+Game board:
+  Holds the cards and renders out a list of them.
+  Should I have a game board or just have them rendered within App???
+  Responsibilities:
+    Loops and generates 8 cards in a random order each time one is clicked.
+
+Card:
+  Displays some sort of memorizable data and has the ability to be clicked.
+  Responsibilities:
+    Holds an id and passes click events to parent.
+
+Notification:
+  Displays a notification about a current event.
+  Responsibilities:
+    Appear for 1s when passed data is new.
