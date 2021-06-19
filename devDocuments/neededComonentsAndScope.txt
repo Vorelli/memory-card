@@ -5,7 +5,7 @@ Components and their responsibilities:
   Responsibilities:
     Renders all other components and connects their data to one another.
 
-[ ] Scoreboard:
+[X] Scoreboard:
   Displays current score and high score.
   Will display a win effect when the highest score is reached.
   Responsibilities:
