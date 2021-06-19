@@ -11,7 +11,7 @@ Components and their responsibilities:
   Responsibilities:
     Displays the scores input from App.
 
-[ ] Game board:
+[X] Game board:
   Holds the cards and renders out a list of them.
   Should I have a game board or just have them rendered within App???
   Responsibilities:

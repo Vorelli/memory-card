@@ -1,12 +1,14 @@
 import { useRef, useState } from 'react';
 import '../App.css';
 import Notification from './Notification';
-import Card from './Card';
+import GameBoard from './GameBoard';
 
 function App() {
   const [text, setText] = useState('');
   const isFading = useRef(null);
   const notificationMilliseconds = 2500;
+  const [numCards, setNumCards] = useState(4);
+  const [clickedCards, setClickedCards] = useState([]);
 
   const setTextThenDelete = (text) => {
     const deleteText = () => {
@@ -20,10 +22,18 @@ function App() {
     isFading.current = setTimeout(deleteText, notificationMilliseconds);
   }
 
+  const cardClicked = (id) => {
+    setTextThenDelete(id + ' was clicked')
+    if (clickedCards.includes(id)) console.log('fail');
+    else {
+      setClickedCards(clicked => { clicked.push(id); return clicked })
+    }
+  }
+
   return <div className="app">
     <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
     <Notification time={notificationMilliseconds} message={text} />
-    <Card cardClicked={() => setTextThenDelete('0 was clicked')} id={0} />
+    <GameBoard cardClicked={(id) => cardClicked(id)} numCards={numCards} />
   </div>;
 }
 
