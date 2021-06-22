@@ -11,12 +11,12 @@ const useShowThenHide = (props) => {
     setImmediate(() => {
       node.style.transition = `${props.time / 1000}s opacity`;
       node.style.opacity = 0;
-    })
+    });
 
     return () => {
       isCurrent.current = false;
-    }
+    };
   }, [props.message, props.ref, props.time]);
-}
+};
 
 export default useShowThenHide;
