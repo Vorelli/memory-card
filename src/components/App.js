@@ -10,6 +10,21 @@ function App() {
   const correctCards = useRef();
   const isFading = useRef(null);
   const notificationMilliseconds = 5000;
+  const [scores, setScores] = useState({ score: 0, hiScore: 0 });
+  useEffect(() => {
+    restart();
+    loadHiScore();
+  }, []); // restart (start?) at start (restart?)
+
+  const loadHiScore = () => {
+    const hiScore = Number.parseInt(localStorage.getItem('hiScore'));
+    if (hiScore) {
+      setScores((scores) => {
+        scores.hiScore = hiScore;
+        return scores;
+      });
+    }
+  };
 
   const restart = () => {
     // could possibly be called start
@@ -18,8 +33,10 @@ function App() {
     // started once before in this world
     setNumCards(4);
     correctCards.current = [];
+    setScores((scores) => {
+      return { score: 0, hiScore: scores.hiScore };
+    });
   };
-  useEffect(() => restart(), []); // restart (start?) at start (restart?)
 
   const lose = () => {
     // lose the game. it restarts??
@@ -53,12 +70,24 @@ function App() {
   const onCardClicked = (id) => {
     setTextThenClear(id + " was clicked. You didn't lose the game, yet!");
 
-    if (correctCards.current.includes(id)) lose();
+    if (correctCards.current.includes(id)) return lose();
+
+    incrementScore();
     if (correctCards.current.length + 1 === numCards) {
       levelUp();
     } else {
       correctCards.current = [...correctCards.current, id];
     }
+  };
+
+  const incrementScore = () => {
+    setScores((scores) => {
+      if (scores.score === scores.hiScore) {
+        localStorage.setItem('hiScore', scores.hiScore + 1);
+        return { score: scores.score + 1, hiScore: scores.hiScore + 1 };
+      }
+      return { score: scores.score + 1, hiScore: scores.hiScore };
+    });
   };
 
   return (
@@ -68,7 +97,11 @@ function App() {
         message={notificationText}
       />
       <GameBoard cardClicked={(id) => onCardClicked(id)} numCards={numCards} />
-      <Scoreboard score={10} hiScore={15} header={'Memory Card'} />
+      <Scoreboard
+        score={scores.score}
+        hiScore={scores.hiScore}
+        header={'Memory Card'}
+      />
     </div>
   );
 }
