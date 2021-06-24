@@ -1,4 +1,4 @@
-module.exports = function shuffle(array) {
+export default function shuffle(array) {
   // taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   var currentIndex = array.length,
     randomIndex;
@@ -14,4 +14,4 @@ module.exports = function shuffle(array) {
   }
 
   return array;
-};
+}
