@@ -1,0 +1,26 @@
+div.card {
+  width: 20%;
+  margin: 0 2.5%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid darkgrey;
+  margin-left: 10px;
+  background-color: white;
+}
+
+div.card:hover {
+  background-color: #e5e5e5;
+}
+
+div.card:active {
+  background-color: #e0e0e0;
+}
+
+div span {
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: default;
+}

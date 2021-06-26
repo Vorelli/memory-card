@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Card from './Card';
 import shuffle from '../helpers/shuffle';
+import '../styles/GameBoard.css';
 
 const GameBoard = (props) => {
   const { numCards, cardClicked } = props;

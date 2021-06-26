@@ -1,0 +1,10 @@
+.app {
+  margin: 0 auto;
+  background-color: #c5c5c5;
+  color: #1e1e1e;
+  max-width: 800px;
+}
+
+html {
+  background-color: lightgrey;
+}
