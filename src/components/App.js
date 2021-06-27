@@ -92,15 +92,15 @@ function App() {
 
   return (
     <div className='app'>
-      <Notification
-        time={notificationMilliseconds}
-        message={notificationText}
-      />
-      <GameBoard cardClicked={(id) => onCardClicked(id)} numCards={numCards} />
       <Scoreboard
         score={scores.score}
         hiScore={scores.hiScore}
         header={'Memory Card'}
+      />
+      <GameBoard cardClicked={(id) => onCardClicked(id)} numCards={numCards} />
+      <Notification
+        time={notificationMilliseconds}
+        message={notificationText}
       />
     </div>
   );

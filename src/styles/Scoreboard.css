@@ -1,0 +1,16 @@
+div.header {
+  order: -1;
+  font-size: 150%;
+}
+
+div.header,
+div.score,
+div.hiScore {
+  flex: 1;
+}
+
+div.scoreboard {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,8 @@
+div.notification {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  background-color: lightgrey;
+  padding: 20px;
+  max-width: 800px;
+}

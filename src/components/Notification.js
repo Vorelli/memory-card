@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import useShowThenHide from '../helpers/useShowThenHide';
+import '../styles/Notification.css';
 
 const Notification = (props) => {
   const divRef = useRef();

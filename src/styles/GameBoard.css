@@ -3,4 +3,5 @@ div.gameBoard {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-bottom: 20px;
 }
