@@ -3,9 +3,9 @@ import '../styles/Scoreboard.css';
 const Scoreboard = (props) => {
   return (
     <div className='scoreboard'>
-      <div className='score'>Score: {props.score}</div>
-      <div className='header'>{props.header}</div>
-      <div className='hiScore'>Hi Score: {props.hiScore}</div>
+      <span className='score'>Score: {props.score}</span>
+      <span className='header'>{props.header}</span>
+      <span className='hiScore'>Hi Score: {props.hiScore}</span>
     </div>
   );
 };

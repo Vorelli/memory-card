@@ -1,11 +1,11 @@
-div.header {
+span.header {
   order: -1;
   font-size: 150%;
 }
 
-div.header,
-div.score,
-div.hiScore {
+span.header,
+span.score,
+span.hiScore {
   flex: 1;
 }
 
@@ -13,4 +13,7 @@ div.scoreboard {
   text-align: center;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10px;
 }

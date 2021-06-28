@@ -8,10 +8,10 @@ const useShowThenHide = (props) => {
 
     node.style.transition = '0s opacity';
     node.style.opacity = 1;
-    setImmediate(() => {
+    setTimeout(() => {
       node.style.transition = `${props.time / 1000}s opacity`;
       node.style.opacity = 0;
-    });
+    }, 100);
 
     return () => {
       isCurrent.current = false;
